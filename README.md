@@ -1,0 +1,2 @@
+# semi_supervised_variational_recurrent_neural_network
+Tensorflow code that implements a semi-supervised variational recurrent neural network
