@@ -56,9 +56,9 @@ def main(flags, data_path):
         x_train_t = x_train + np.random.normal(0,0.05, x_train.shape)
         loss_list = model.train(x_train_t, y_train, keep_prob=flags['drop_%'], n_epochs=1, tau = flags['tau'])
         loss += loss_list[-1]
-        print("Loss, epoch {0}   ".format(i) + "-log p(x) <= {:0.3f}".format(loss_list[-1]))
+        
         if np.mod(i,flags['print_epoch']) == 0 and i!=0:
-            print("Mean loss, epoch {0}   ".format(i) + "-log p(x) <= {:0.3f}".format(loss / 10.))
+            print("Mean loss, epoch {0}   ".format(i) + "-log p(x) <= {:0.3f}".format(loss ))
             loss = 0.
         if np.mod(i,flags['save_epoch']) == 0 and i!=0:
             print("saving model in epoch {0}".format(i))
